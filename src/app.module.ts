@@ -7,6 +7,8 @@ import { LoggerModule } from 'nestjs-pino';
 import { PrismaModule } from './prisma/prisma.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { EmailGrupsModule } from './emailGrup/emailGrup.module';
+import { EmailModule } from './email/email.module';
 
 
 @Module({
@@ -27,6 +29,8 @@ import { AuthModule } from './auth/auth.module';
     PrismaModule,
     UsersModule,
     AuthModule,
+    EmailGrupsModule,
+    EmailModule
   ],
 })
 export class AppModule {}

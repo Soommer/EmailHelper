@@ -1,0 +1,17 @@
+<h1 style="margin:0 0 16px">Cześć {{name}}!</h1>
+<p>To jest Wiadomość testowa:</p>
+<p>
+  Wiadomość Testowa 
+</p>
+
+{{#if items.length}}
+  <h3>Żeczy z context "items":</h3>
+  <ul>
+    {{#each items}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+{{/if}}
+
+
+

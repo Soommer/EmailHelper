@@ -29,6 +29,7 @@ model User{
   updatedAt DateTime @updatedAt
   //refresh
   refreshTokens RefreshToken[]
+  emailGrups EmailGrup[]
 }
 
 model RefreshToken {
@@ -37,6 +38,18 @@ model RefreshToken {
   token String @unique
   expiresAt DateTime
   createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model EmailGrup {
+  id String @id@default(uuid())
+  userId String
+  emails String[]
+  template String
+  createdAt DateTime @default(now())
+  sendTime DateTime
+  sended Boolean @default(false) 
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
